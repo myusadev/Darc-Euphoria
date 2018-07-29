@@ -220,8 +220,6 @@ namespace Darc_Euphoria.Euphoric.Objects
                 {
                     if (Dormant)
                         _Visible = false;
-                    else if (SpottedByMask)
-                        _Visible = true;
                     else
                         _Visible = Local._bsp.IsVisible(Local.EyeLevel, BonePosition(6));
                 }

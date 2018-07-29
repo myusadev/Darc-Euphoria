@@ -198,6 +198,56 @@ namespace Darc_Euphoria.Euphoric.Objects
             }
         }
 
+
+        public bool isWeapon
+        {
+            get
+            {
+                if (isKnife()) return true;
+
+                switch (WeaponID)
+                {
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 7:
+                    case 8: 
+                    case 9:
+                    case 10: 
+                    case 11:
+                    case 13: 
+                    case 14: 
+                    case 16: 
+                    case 17: 
+                    case 19: 
+                    case 24: 
+                    case 25:
+                    case 26: 
+                    case 27:
+                    case 28: 
+                    case 29:
+                    case 30:
+                    case 31: 
+                    case 32: 
+                    case 33: 
+                    case 34: 
+                    case 35: 
+                    case 36:
+                    case 38:
+                    case 39:
+                    case 40: 
+                    case 49:
+                    case 69:
+                    case 61:
+                    case 63:
+                    case 64:
+                        return true;
+                    default: return false;
+                }
+            }
+        }
+
         public string ClassName
         {
             get

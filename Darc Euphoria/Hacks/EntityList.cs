@@ -53,7 +53,7 @@ namespace Darc_Euphoria.Hacks
             if (File.Exists(MapPath) && Local.ActiveWeapon.WeaponID != -1)
             {
                 Local._bsp = new Euphoric.BspParsing.BSP(MapPath);
-                ClientCMD.Exec(String.Format("clear; echo Map File {0} Loaded!", Local._bsp.FileName));
+                ClientCMD.Exec(String.Format("clear; echo Map File {0} Loaded!", Local.MapName));
             }
         }
 

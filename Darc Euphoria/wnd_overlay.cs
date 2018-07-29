@@ -39,6 +39,7 @@ namespace Darc_Euphoria
         Thread SharpDXThread = new Thread(new ThreadStart(dxThread))
         {
             Priority = ThreadPriority.Highest,
+            IsBackground = true,
         };
 
         public wnd_overlay()

@@ -581,18 +581,20 @@ namespace Darc_Euphoria
         #endregion
 
         #region Threads
-        Thread miscThread = new Thread(new ThreadStart(Misc.Start))
-        {
-            Priority = ThreadPriority.AboveNormal,
-            IsBackground = true,
-        };
         Thread aimbotThread = new Thread(new ThreadStart(Aimbot.Start))
         {
             Priority = ThreadPriority.Highest,
+            IsBackground = true,
         };
         Thread entityUpdate = new Thread(new ThreadStart(EntityList.Start))
         {
-            Priority = ThreadPriority.AboveNormal,
+            Priority = ThreadPriority.Highest,
+            IsBackground = true,
+        };
+        Thread miscThread = new Thread(new ThreadStart(Misc.Start))
+        {
+            Priority = ThreadPriority.Highest,
+            IsBackground = true,
         };
         Thread fakeLagThread = new Thread(new ThreadStart(FakeLag.Start))
         {
@@ -891,16 +893,15 @@ namespace Darc_Euphoria
         #region FormInteraction
         private void cheatTabs_CheckedChanged(object sender, EventArgs e)
         {
+            menu_cheats.SuspendLayout();
+
             RadioButton tab = sender as RadioButton;
             if (!tab.Checked) return;
-
             lbl_CheatHeader.Text = tab.Text;
             int index = Int32.Parse(tab.Name.Substring(4 + tab.Text.Length, tab.Name.Length - tab.Text.Length - 4));
             index -= 1;
-
-            menu_cheats.SuspendLayout();
             menu_cheats.SelectedIndex = index;
-            menu_cheats.Refresh();
+
             menu_cheats.ResumeLayout();
         }
 

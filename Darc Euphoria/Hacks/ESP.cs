@@ -36,8 +36,8 @@ namespace Darc_Euphoria.Hacks
                 }
             }
 
-            Items(Device);
             Players(Device);
+            Items(Device);
             Glow.Start();
         }
 
@@ -55,9 +55,10 @@ namespace Darc_Euphoria.Hacks
                 if (Settings.userSettings.MiscSettings.Spectators && Local.Health > 0)
                     Spectators(Device);
 
-                if (!visuals.Enabled) return;
+                if (!visuals.Enabled) continue;
 
-                if (player.Health <= 0 || player.Dormant) continue;
+                if (player.Health <= 0 ) continue;
+                if (player.Dormant) continue;
                 if (player.isTeam && !visuals.DisplayTeam) continue;
 
                 Vector2 screenPos = player.Position.ToScreen();
@@ -173,6 +174,7 @@ namespace Darc_Euphoria.Hacks
                                 Right = item.Position.ToScreen().x + 10,
                             };
 
+                            if (item.isWeapon && !visuals.ItemEsp) continue;
                             if (item.ClassName == "Decoy" && !visuals.GrenadesEsp) continue;
                             if (item.ClassName == "Smoke" && !visuals.GrenadesEsp) continue;
                             if (item.ClassName == "Incendiary" && !visuals.GrenadesEsp) continue;
@@ -180,7 +182,7 @@ namespace Darc_Euphoria.Hacks
                             if (item.ClassName == "Grenade" && !visuals.GrenadesEsp) continue;
                             if (item.ClassName == "Flashbang" && !visuals.GrenadesEsp) continue;
                             if (item.ClassName == "HE Grenade" && !visuals.GrenadesEsp) continue;
-
+                            
                             brush.Color = Color.FromArgb(1, 1, 1).toRawColor4();
 
                             Device.DrawText(item.WeaponName, txtForm, rect, brush, DrawTextOptions.NoSnap);
