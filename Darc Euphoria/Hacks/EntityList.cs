@@ -28,16 +28,10 @@ namespace Darc_Euphoria.Hacks
                     gvar.SHUTDOWN--;
                     break;
                 }
-
-                Thread.Sleep(1);
+                Thread.Sleep(1000);
 
                 if (!Local.InGame) continue;
             
-                List = Entity.EntityArray;
-                ItemList = ItemObjects.ItemList;
-
-                ESP.matrix = Memory.Read<Matrix4x4>(Memory.client + Offsets.dwViewMatrix);
-
                 string MapPath = string.Format(@"{0}\csgo\maps\{1}.bsp", 
                     Memory.process.Modules[0].FileName.Substring(0, Memory.process.Modules[0].FileName.Length - 9), Local.MapName);
 

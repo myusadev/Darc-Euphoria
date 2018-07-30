@@ -195,12 +195,13 @@ namespace Darc_Euphoria
             gvar.SHUTDOWN++;
             while (gvar.isRunning)
             {
-                Thread.Sleep(1);
+                
                 if (gvar.isShuttingDown)
                 {
                     gvar.SHUTDOWN--;
                     break;
                 }
+                Thread.Sleep(1);
                 var frameLength = 1000f / gvar.Fps;
 
                 if (gvar.RefreshID == int.MaxValue)

@@ -36,6 +36,11 @@ namespace Darc_Euphoria.Hacks
                 }
             }
 
+            EntityList.List = Entity.EntityArray;
+            EntityList.ItemList = ItemObjects.ItemList;
+
+            matrix = Memory.Read<Matrix4x4>(Memory.client + Offsets.dwViewMatrix);
+
             Players(Device);
             Items(Device);
             Glow.Start();

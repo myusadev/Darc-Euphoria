@@ -811,12 +811,6 @@ namespace Darc_Euphoria
             Rect rect = new Rect();
             WinAPI.GetClientRect(Memory.process.MainWindowHandle, out rect);
 
-            if (rect.Right == 0 || rect.Bottom == 0)
-            {
-                rect.Right = Screen.PrimaryScreen.WorkingArea.Width;
-                rect.Bottom = Screen.PrimaryScreen.WorkingArea.Height;
-            }
-
             this.Left = (rect.Right / 2) - (this.Width / 2);
             this.Top = (rect.Bottom / 2) - (this.Height / 2);
 

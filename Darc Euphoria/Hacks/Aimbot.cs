@@ -337,7 +337,7 @@ namespace Darc_Euphoria.Hacks
             }
         }
 
-        //It was a failed attemp :/
+        //It was a failed attempt :/
         public static void SetSilentAngle(Vector2 viewangle)
         {
             Vector2 oldViewAngle = Local.ViewAngle;
@@ -356,7 +356,7 @@ namespace Darc_Euphoria.Hacks
                 iUserCMDSequenceNumber = Memory.Read<int>(userCmd + 0x4);
             }
 
-            for (int i = 0; i < 40; i++)
+            for (int i = 0; i < 20; i++)
                 Memory.Write<Vector2>(userCmd + 0xC, viewangle.ClampAngle());
 
             Local.ViewAngle = oldViewAngle;
