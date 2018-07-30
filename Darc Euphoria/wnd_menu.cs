@@ -819,6 +819,15 @@ namespace Darc_Euphoria
 
             this.Left = (rect.Right / 2) - (this.Width / 2);
             this.Top = (rect.Bottom / 2) - (this.Height / 2);
+
+            if (Left <= 0 || Top <= 0)
+            {
+                rect.Right = Screen.PrimaryScreen.WorkingArea.Width;
+                rect.Bottom = Screen.PrimaryScreen.WorkingArea.Height;
+
+                this.Left = (rect.Right / 2) - (this.Width / 2);
+                this.Top = (rect.Bottom / 2) - (this.Height / 2);
+            }
         }
         #endregion
         
