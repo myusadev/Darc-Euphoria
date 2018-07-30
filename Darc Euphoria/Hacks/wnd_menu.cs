@@ -601,11 +601,6 @@ namespace Darc_Euphoria
             Priority = ThreadPriority.Highest,
             IsBackground = true,
         };
-        Thread bhopThread = new Thread(new ThreadStart(Bunnyhop.Start))
-        {
-            Priority = ThreadPriority.Highest,
-            IsBackground = true,
-        };
         #endregion
 
         #region WndMove
@@ -667,7 +662,7 @@ namespace Darc_Euphoria
             miscThread.Start();
             aimbotThread.Start();
             fakeLagThread.Start();
-            bhopThread.Start();
+
             ClientCMD.Exec("clear; echo Darc Euphoria Loaded");
 
             //This Is For Me

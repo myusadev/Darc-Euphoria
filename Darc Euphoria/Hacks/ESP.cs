@@ -56,7 +56,6 @@ namespace Darc_Euphoria.Hacks
                     }
                     Spectators(Device);
                 }
-                    
 
                 if (!visuals.Enabled) continue;
 

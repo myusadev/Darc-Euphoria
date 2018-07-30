@@ -165,6 +165,7 @@ namespace Darc_Euphoria.Euphoric.Objects
             {
                 if (value == _Flash) return;
                 Memory.Write<float>(Ptr + Netvars.m_flFlashMaxAlpha, value);
+                _Flash = value;
             }
 
         }

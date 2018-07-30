@@ -29,16 +29,13 @@ namespace Darc_Euphoria.Euphoric
         public static bool isShuttingDown = false;
         public static int SHUTDOWN = 0;
 
-        public static float Fps = 60;
+        public static float Fps = 150;
         private static CGlobalVarsBase _GlobalVarsBase;
         public static int rGlobalVarsBase = 0;
         public static CGlobalVarsBase GlobalVarsBase
         {
             get
             {
-                //if (rGlobalVarsBase.Upd())
-                    //_GlobalVarsBase =
-
                 return Memory.Read<CGlobalVarsBase>(Memory.engine + Offsets.dwGlobalVars);
             }
         }

@@ -27,13 +27,13 @@ namespace Darc_Euphoria.Hacks
 
                 Thread.Sleep(1);
 
-                if (!Local.InGame) continue;
-                else Thread.Sleep(100);
+                if (!Local.InGame)
+                    continue;
+                else
+                    Thread.Sleep(100);
 
                 Triggerbot.Start();
-                Bunnyhop.Start();
                 SkinChanger.Start();
-                
 
                 Local.NoArms = Settings.userSettings.VisualSettings.NoHands;
                 Local.Flash = Settings.userSettings.MiscSettings.FlashAlpha;
@@ -66,6 +66,11 @@ namespace Darc_Euphoria.Hacks
                         Local.DrawViewModel = false;
                         Local.Fov = 10;
                     }
+                    else
+                    {
+                        Local.DrawViewModel = true;
+                        Local.Fov = Settings.userSettings.MiscSettings.Fov;
+                    }
                 }
                 else
                 {
@@ -84,6 +89,11 @@ namespace Darc_Euphoria.Hacks
                     {
                         Local.DrawViewModel = false;
                         Local.Fov = 10;
+                    }
+                    else
+                    {
+                        Local.DrawViewModel = true;
+                        Local.Fov = Settings.userSettings.MiscSettings.Fov;
                     }
                 }
 
