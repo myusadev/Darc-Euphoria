@@ -34,7 +34,7 @@ namespace Darc_Euphoria
         public const int LWA_ALPHA = 0x2;
         public const int LWA_COLORKEY = 0x1;
 
-        private static RenderTarget Device;
+        private static WindowRenderTarget Device;
 
         Thread SharpDXThread = new Thread(new ThreadStart(dxThread))
         {
@@ -48,6 +48,14 @@ namespace Darc_Euphoria
 
             int initialStyle = WinAPI.GetWindowLong(this.Handle, -20);
             WinAPI.SetWindowLong(this.Handle, -20,  initialStyle | 0x80000 | 0x20 | 0x80);
+
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer |
+                ControlStyles.AllPaintingInWmPaint |
+                ControlStyles.DoubleBuffer |
+                ControlStyles.UserPaint |
+                ControlStyles.Opaque |
+                ControlStyles.ResizeRedraw |
+                ControlStyles.SupportsTransparentBackColor, true);
 
             InitializeComponent();
 
@@ -63,10 +71,11 @@ namespace Darc_Euphoria
                 new RenderTargetProperties(new PixelFormat(Format.B8G8R8A8_UNorm, AlphaMode.Premultiplied)),
                 renderProp);
 
-            this.Visible = false;
+            
             factory.Dispose();
             
             updateWnd.RunWorkerAsync();
+            OnResize(null);
             SharpDXThread.Start();
         }
 
@@ -186,6 +195,7 @@ namespace Darc_Euphoria
             gvar.SHUTDOWN++;
             while (gvar.isRunning)
             {
+                Thread.Sleep(1);
                 if (gvar.isShuttingDown)
                 {
                     gvar.SHUTDOWN--;
@@ -226,8 +236,6 @@ namespace Darc_Euphoria
                         {
                             DrawText(DateTime.Now.ToString("h:mm:ss tt"), 4, 4);
                         }
-
-
                     }
 
                     if (!Local.InGame)
@@ -296,8 +304,6 @@ namespace Darc_Euphoria
                         }
 
                     }
-
-                    
 
                     Device.EndDraw();
                 } catch { Thread.Sleep(10); }

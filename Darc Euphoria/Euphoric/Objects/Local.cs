@@ -386,7 +386,7 @@ namespace Darc_Euphoria.Euphoric.Objects
                 if (!Scoped) return 1f;
 
 
-                return ActiveWeapon.ScopeLevel == 1 ? 8f : 16f;
+                return ActiveWeapon.ScopeLevel == 1 ? 2f : 12f;
             }
         }
 

@@ -800,9 +800,12 @@ namespace Darc_Euphoria
             wnd_overlay overlay = new wnd_overlay();
             overlay.Show();
 
-            this.Location = gvar.OverlayPoint;
-            this.Left -= (gvar.OverlaySize.Width / 2) - (this.Width / 2);
-            this.Top -= (gvar.OverlaySize.Height / 2) - (this.Height / 2);
+
+            Rect rect = new Rect();
+            WinAPI.GetClientRect(Memory.process.MainWindowHandle, out rect);
+
+            this.Left = (rect.Right / 2) - (this.Width / 2);
+            this.Top = (rect.Bottom / 2) - (this.Height / 2);
         }
         #endregion
         

@@ -37,7 +37,6 @@ namespace Darc_Euphoria.Hacks
             if (gvar.isMenu) return;
             if (!Local.InGame) return;
 
-
             if (Settings.userSettings.TriggerbotSettings.Knifebot && Local.ActiveWeapon.isKnife())
             {
                 if (CanKnife()) Local.Attack2();

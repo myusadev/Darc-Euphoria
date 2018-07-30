@@ -22,8 +22,8 @@ namespace Darc_Euphoria.Hacks
                 Local.ForceUpdate();
             }
 
-            if (!Local.InGame) return;
             if (!Settings.userSkinSettings.Enable) return;
+            if (!Local.InGame) return;
 
             List<BaseWeapon> weapons = Local.WeaponList;
             skinSettings.Name = String.Empty;
@@ -121,8 +121,6 @@ namespace Darc_Euphoria.Hacks
                     return;
                 }
             }
-
-            
         }
 
     }

@@ -45,15 +45,18 @@ namespace Darc_Euphoria.Hacks
         {
             foreach(Entity player in EntityList.List)
             {
-                foreach (Entity spec in EntityList.List)
-                {
-                    if (player.Observe == spec.Ptr)
-                        spectatorString += player.Name + " -> " + spec.Name + "\n";
-                    else if (player.Observe == Local.Ptr)
-                        spectatorString += player.Name + " -> " + spec.Name + "<<\n";
-                }
                 if (Settings.userSettings.MiscSettings.Spectators && Local.Health > 0)
+                {
+                    foreach (Entity spec in EntityList.List)
+                    {
+                        if (player.Observe == spec.Ptr)
+                            spectatorString += player.Name + " -> " + spec.Name + "\n";
+                        else if (player.Observe == Local.Ptr)
+                            spectatorString += player.Name + " -> " + spec.Name + "<<\n";
+                    }
                     Spectators(Device);
+                }
+                    
 
                 if (!visuals.Enabled) continue;
 

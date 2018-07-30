@@ -28,10 +28,12 @@ namespace Darc_Euphoria.Hacks
                 Thread.Sleep(1);
 
                 if (!Local.InGame) continue;
+                else Thread.Sleep(100);
 
                 Triggerbot.Start();
                 Bunnyhop.Start();
                 SkinChanger.Start();
+                
 
                 Local.NoArms = Settings.userSettings.VisualSettings.NoHands;
                 Local.Flash = Settings.userSettings.MiscSettings.FlashAlpha;
@@ -87,10 +89,9 @@ namespace Darc_Euphoria.Hacks
 
                 if (Settings.userSettings.MiscSettings._3rdPerson)
                 {
-                    if (WinAPI.GetAsyncKeyState(Settings.userSettings.MiscSettings._3rdPersonKey) > 0)
+                    if ((WinAPI.GetAsyncKeyState(Settings.userSettings.MiscSettings._3rdPersonKey) & 0x1) > 0)
                     {
                         Local.ThirdPerson = !Local.ThirdPerson;
-                        Thread.Sleep(500);
                     }
                 }
                 else if (Local.ThirdPerson)
