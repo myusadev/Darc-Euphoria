@@ -634,7 +634,7 @@ namespace Darc_Euphoria
 
             if (!Sig.Init())
             {
-                MessageBox.Show("Failed to Load!");
+                MessageBox.Show("Failed to Load!\nMake Sure You Have CS:GO Started Before Launching.");
                 Environment.Exit(Environment.ExitCode);
             }
             Sig.InitOffsets();
