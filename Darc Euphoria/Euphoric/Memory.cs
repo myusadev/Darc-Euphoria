@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 
 namespace Darc_Euphoria.Euphoric
 {
+    //TODO Get rid of Marshalling
+
     internal static class Memory
     {
         public static IntPtr pHandle;
@@ -55,10 +57,11 @@ namespace Darc_Euphoria.Euphoric
             handle.Free();
             return structure;
         }
-
+         
         public static byte[] GetStructBytes<T>(T str)
         {
             int size = Marshal.SizeOf(typeof(T));
+
             byte[] arr = new byte[size];
 
             IntPtr ptr = Marshal.AllocHGlobal(size);

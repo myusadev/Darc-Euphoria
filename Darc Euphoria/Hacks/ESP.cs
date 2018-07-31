@@ -28,6 +28,9 @@ namespace Darc_Euphoria.Hacks
             visuals = Settings.userSettings.VisualSettings;
             visColors = Settings.userSettings.VisualColors;
 
+            EntityList.List = Entity.EntityArray;
+            EntityList.ItemList = ItemObjects.ItemList;
+
             if (!visuals.Enabled)
             {
                 if(!Settings.userSettings.MiscSettings.C4Countdown)
@@ -35,10 +38,6 @@ namespace Darc_Euphoria.Hacks
                     if (!Settings.userSettings.MiscSettings.Spectators) return;
                 }
             }
-
-            EntityList.List = Entity.EntityArray;
-            EntityList.ItemList = ItemObjects.ItemList;
-
             matrix = Memory.Read<Matrix4x4>(Memory.client + Offsets.dwViewMatrix);
 
             Players(Device);

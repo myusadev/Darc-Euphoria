@@ -43,7 +43,13 @@ namespace Darc_Euphoria.Hacks
                 }
 
                 Thread.Sleep(10);
-                
+
+                if (WinAPI.GetAsyncKeyState(Settings.userSettings.AimbotSettings.Key) <= 0 &&
+                                (WinAPI.GetAsyncKeyState(Settings.userSettings.AimbotSettings.Key) & 0x8000) <= 0)
+                {
+                    oldAngle = new Vector2(0, 0);
+                }
+
                 if (gvar.isMenu) continue;
                 if (!Local.InGame)
                 {

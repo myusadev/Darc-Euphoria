@@ -50,7 +50,8 @@ namespace Darc_Euphoria.Euphoric.Objects
                 return _GetPlayers;
             }
         }
-        
+
+        private byte[] ByteArray;
         public int Index;
         private static int _Ptr;
         private static int _Health;
@@ -295,6 +296,7 @@ namespace Darc_Euphoria.Euphoric.Objects
         public Entity(int index, bool Bsp = false)
         {
             Index = index;
+            //ByteArray = Memory.ReadBytes(Memory.client + Offsets.dwEntityList + (Index - 1) * 0x10, Memory.client_size);
         }
     }
 }
