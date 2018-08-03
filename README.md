@@ -1,7 +1,7 @@
 # Darc Euphoria
 > Cheat by darc phansea
 
-Darc Euphoria is a CS:GO cheat written completely in C#. Most code is indeed mine, with a few pastes, mainly the BSP parsing (From Zat-s-External) and Shellcode (From B3akers ExternalCSGO). Optization is not my strong point so prepare for that. This uses an overlay which eats at your frames. The overlay is so you can get that noice esp that took me 15 minutes to make. Somethings to keep in mind.
+Darc Euphoria is a CS:GO cheat written completely in C#. Most code is indeed mine, with a few pastes, mainly the BSP parsing (From Zat's Helios Cheat https://github.com/BigMo/ZMH5_Helios) and Shellcode (From B3akers ExternalCSGO). Optization is not my strong point so prepare for that. This uses an overlay which eats at your frames. The overlay is so you can get that noice esp that took me 15 minutes to make. Somethings to keep in mind.
 
 The following features have not been tested but in theory should work.
 1. Spectators
