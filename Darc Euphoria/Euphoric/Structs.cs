@@ -139,9 +139,22 @@ namespace Darc_Euphoria.Euphoric
                 z = _z;
             }
 
+            public static Vector3 Zero
+            {
+                get
+                {
+                    return new Vector3(0, 0, 0);
+                }
+            }
+
             public override string ToString()
             {
                 return String.Format("{0}, {1}, {2}", x, y, z);
+            }
+
+            public float Dot(Vector3 right)
+            {
+                return (x * right.x) + (y * right.y) + (z * right.z);
             }
 
             public static float Dot(Vector3 left, Vector3 right)
@@ -166,9 +179,12 @@ namespace Darc_Euphoria.Euphoric
                 return new Vector3(a.x / b.x, a.y / b.y, a.z / b.z);
             }
 
-            public float Length()
+            public float Length
             {
-                return (float)Math.Sqrt((x * x) + (y * y) + (z * z));
+                get
+                {
+                    return (float)Math.Sqrt((x * x) + (y * y) + (z * z));
+                }
             }
 
             public static Vector3 operator *(Vector3 a, float b)
@@ -189,6 +205,60 @@ namespace Darc_Euphoria.Euphoric
                 return new Vector3(a.x - b, a.y - b, a.z - b);
             }
 
+            public static bool operator ==(Vector3 v1, Vector3 v2)
+            {
+                return v1.x == v2.x && v1.y == v2.y && v1.z == v2.z;
+            }
+            public static bool operator !=(Vector3 v1, Vector3 v2)
+            {
+                return !(v1 == v2);
+            }
+
+            public void Normalize()
+            {
+                float len = Length;
+                if (len != 0f)
+                {
+                    x /= len;
+                    y /= len;
+                    z /= len;
+                }
+            }
+
+            public float this[int i]
+            {
+                get
+                {
+                    switch (i)
+                    {
+                        case 0:
+                            return this.x;
+                        case 1:
+                            return this.y;
+                        case 2:
+                            return this.z;
+                        default:
+                            throw new IndexOutOfRangeException();
+                    }
+                }
+                set
+                {
+                    switch (i)
+                    {
+                        case 0:
+                            this.x = value;
+                            break;
+                        case 1:
+                            this.y = value;
+                            break;
+                        case 2:
+                            this.z = value;
+                            break;
+                        default:
+                            throw new IndexOutOfRangeException();
+                    }
+                }
+            }
         }
 
         public static bool Equals(this Vector2 a, Vector2 b)

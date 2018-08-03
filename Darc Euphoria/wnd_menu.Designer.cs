@@ -42,26 +42,6 @@
             this.rdb_triggerbot2 = new System.Windows.Forms.RadioButton();
             this.menu_cheats = new System.Windows.Forms.TabControl();
             this.tab_aimbot = new System.Windows.Forms.TabPage();
-            this.tab_triggerbot = new System.Windows.Forms.TabPage();
-            this.tab_visuals = new System.Windows.Forms.TabPage();
-            this.tab_skins = new System.Windows.Forms.TabPage();
-            this.tab_misc = new System.Windows.Forms.TabPage();
-            this.tab_colors = new System.Windows.Forms.TabPage();
-            this.tab_configs = new System.Windows.Forms.TabPage();
-            this.configs_btn_exit = new System.Windows.Forms.Button();
-            this.configs_btn_saveSkin = new System.Windows.Forms.Button();
-            this.configs_txt_saveSkin = new System.Windows.Forms.TextBox();
-            this.configs_btn_loadSkin = new System.Windows.Forms.Button();
-            this.configs_btn_saveCheat = new System.Windows.Forms.Button();
-            this.configs_txt_saveCheat = new System.Windows.Forms.TextBox();
-            this.configs_btn_loadCheat = new System.Windows.Forms.Button();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.config_list_skinCfg = new System.Windows.Forms.ListBox();
-            this.configs_list_cheatCfg = new System.Windows.Forms.ListBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.menu_Thread = new System.ComponentModel.BackgroundWorker();
-            this.EuphoricToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.euphoricPanel6 = new Darc_Euphoria.Euphoric.Controls.EuphoricPanel();
             this.label26 = new System.Windows.Forms.Label();
             this.aimbot_slider_fov = new Darc_Euphoria.Euphoric.Controls.EuphoricSlider();
@@ -94,6 +74,7 @@
             this.aimbot_chk_spotted = new System.Windows.Forms.CheckBox();
             this.aimbot_list_weaponCFG = new System.Windows.Forms.ListBox();
             this.aimbot_chk_enable = new System.Windows.Forms.CheckBox();
+            this.tab_triggerbot = new System.Windows.Forms.TabPage();
             this.euphoricPanel5 = new Darc_Euphoria.Euphoric.Controls.EuphoricPanel();
             this.triggerbot_chk_knifeBot = new System.Windows.Forms.CheckBox();
             this.triggerbot_chk_targetTeam = new System.Windows.Forms.CheckBox();
@@ -105,6 +86,7 @@
             this.triggerbot_slider_delay = new Darc_Euphoria.Euphoric.Controls.EuphoricSlider();
             this.triggerbot_list_weaponCFG = new System.Windows.Forms.ListBox();
             this.triggerbot_chk_enabled = new System.Windows.Forms.CheckBox();
+            this.tab_visuals = new System.Windows.Forms.TabPage();
             this.euphoricPanel4 = new Darc_Euphoria.Euphoric.Controls.EuphoricPanel();
             this.visuals_chk_pseudoChams = new System.Windows.Forms.CheckBox();
             this.visuals_chk_displayTeam = new System.Windows.Forms.CheckBox();
@@ -135,6 +117,7 @@
             this.euphoricGroupBox1 = new Darc_Euphoria.Euphoric.Controls.EuphoricGroupBox();
             this.visuals_combox_boxDisplay = new System.Windows.Forms.ComboBox();
             this.visuals_chk_boxOutline = new System.Windows.Forms.CheckBox();
+            this.tab_skins = new System.Windows.Forms.TabPage();
             this.euphoricPanel3 = new Darc_Euphoria.Euphoric.Controls.EuphoricPanel();
             this.skins_btn_updateKey = new System.Windows.Forms.Button();
             this.skin_chk_enable = new System.Windows.Forms.CheckBox();
@@ -157,7 +140,9 @@
             this.skin_list_skinList = new System.Windows.Forms.ListBox();
             this.skin_list_weaponList = new System.Windows.Forms.ListBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.tab_misc = new System.Windows.Forms.TabPage();
             this.euphoricPanel2 = new Darc_Euphoria.Euphoric.Controls.EuphoricPanel();
+            this.misc_chk_radar = new System.Windows.Forms.CheckBox();
             this.misc_chk_chatspam = new System.Windows.Forms.CheckBox();
             this.misc_btn_3rdpersonkey = new System.Windows.Forms.Button();
             this.misc_chk_rankRevealer = new System.Windows.Forms.CheckBox();
@@ -183,23 +168,35 @@
             this.misc_txt_clanChanger = new System.Windows.Forms.TextBox();
             this.euphoricGroupBox9 = new Darc_Euphoria.Euphoric.Controls.EuphoricGroupBox();
             this.misc_txt_nameChanger = new System.Windows.Forms.TextBox();
+            this.tab_colors = new System.Windows.Forms.TabPage();
             this.euphoricPanel1 = new Darc_Euphoria.Euphoric.Controls.EuphoricPanel();
             this.colors_btn_reset = new System.Windows.Forms.Button();
             this.colors_btn_apply = new System.Windows.Forms.Button();
             this.euphColorPicker = new Darc_Euphoria.Euphoric.Controls.EuphoricColorPicker();
             this.colors_list_colorList = new System.Windows.Forms.ListBox();
+            this.tab_configs = new System.Windows.Forms.TabPage();
+            this.configs_btn_exit = new System.Windows.Forms.Button();
+            this.configs_btn_saveSkin = new System.Windows.Forms.Button();
+            this.configs_txt_saveSkin = new System.Windows.Forms.TextBox();
+            this.configs_btn_loadSkin = new System.Windows.Forms.Button();
+            this.configs_btn_saveCheat = new System.Windows.Forms.Button();
+            this.configs_txt_saveCheat = new System.Windows.Forms.TextBox();
+            this.configs_btn_loadCheat = new System.Windows.Forms.Button();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.config_list_skinCfg = new System.Windows.Forms.ListBox();
+            this.configs_list_cheatCfg = new System.Windows.Forms.ListBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.menu_Thread = new System.ComponentModel.BackgroundWorker();
+            this.EuphoricToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             this.menu_cheats.SuspendLayout();
             this.tab_aimbot.SuspendLayout();
-            this.tab_triggerbot.SuspendLayout();
-            this.tab_visuals.SuspendLayout();
-            this.tab_skins.SuspendLayout();
-            this.tab_misc.SuspendLayout();
-            this.tab_colors.SuspendLayout();
-            this.tab_configs.SuspendLayout();
             this.euphoricPanel6.SuspendLayout();
             this.aimbot_grp_aim.SuspendLayout();
+            this.tab_triggerbot.SuspendLayout();
             this.euphoricPanel5.SuspendLayout();
+            this.tab_visuals.SuspendLayout();
             this.euphoricPanel4.SuspendLayout();
             this.euphoricGroupBox6.SuspendLayout();
             this.euphoricGroupBox5.SuspendLayout();
@@ -207,14 +204,18 @@
             this.euphoricGroupBox3.SuspendLayout();
             this.euphoricGroupBox2.SuspendLayout();
             this.euphoricGroupBox1.SuspendLayout();
+            this.tab_skins.SuspendLayout();
             this.euphoricPanel3.SuspendLayout();
             this.euphoricGroupBox7.SuspendLayout();
+            this.tab_misc.SuspendLayout();
             this.euphoricPanel2.SuspendLayout();
             this.euphoricGroupBox8.SuspendLayout();
             this.euphoricGroupBox11.SuspendLayout();
             this.euphoricGroupBox10.SuspendLayout();
             this.euphoricGroupBox9.SuspendLayout();
+            this.tab_colors.SuspendLayout();
             this.euphoricPanel1.SuspendLayout();
+            this.tab_configs.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbl_DarcEuphoria
@@ -424,263 +425,6 @@
             this.tab_aimbot.Size = new System.Drawing.Size(570, 351);
             this.tab_aimbot.TabIndex = 0;
             this.tab_aimbot.Text = "Aimbot";
-            // 
-            // tab_triggerbot
-            // 
-            this.tab_triggerbot.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.tab_triggerbot.Controls.Add(this.euphoricPanel5);
-            this.tab_triggerbot.Location = new System.Drawing.Point(4, 26);
-            this.tab_triggerbot.Name = "tab_triggerbot";
-            this.tab_triggerbot.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_triggerbot.Size = new System.Drawing.Size(570, 351);
-            this.tab_triggerbot.TabIndex = 1;
-            this.tab_triggerbot.Text = "Triggerbot";
-            // 
-            // tab_visuals
-            // 
-            this.tab_visuals.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.tab_visuals.Controls.Add(this.euphoricPanel4);
-            this.tab_visuals.Location = new System.Drawing.Point(4, 26);
-            this.tab_visuals.Name = "tab_visuals";
-            this.tab_visuals.Size = new System.Drawing.Size(570, 351);
-            this.tab_visuals.TabIndex = 2;
-            this.tab_visuals.Text = "Visuals";
-            // 
-            // tab_skins
-            // 
-            this.tab_skins.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.tab_skins.Controls.Add(this.euphoricPanel3);
-            this.tab_skins.Font = new System.Drawing.Font("Calibri", 10.18868F, System.Drawing.FontStyle.Bold);
-            this.tab_skins.Location = new System.Drawing.Point(4, 26);
-            this.tab_skins.Name = "tab_skins";
-            this.tab_skins.Size = new System.Drawing.Size(570, 351);
-            this.tab_skins.TabIndex = 3;
-            this.tab_skins.Text = "Skins";
-            // 
-            // tab_misc
-            // 
-            this.tab_misc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.tab_misc.Controls.Add(this.euphoricPanel2);
-            this.tab_misc.Location = new System.Drawing.Point(4, 26);
-            this.tab_misc.Name = "tab_misc";
-            this.tab_misc.Size = new System.Drawing.Size(570, 351);
-            this.tab_misc.TabIndex = 4;
-            this.tab_misc.Text = "Misc";
-            // 
-            // tab_colors
-            // 
-            this.tab_colors.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.tab_colors.Controls.Add(this.euphoricPanel1);
-            this.tab_colors.Location = new System.Drawing.Point(4, 26);
-            this.tab_colors.Name = "tab_colors";
-            this.tab_colors.Size = new System.Drawing.Size(570, 351);
-            this.tab_colors.TabIndex = 5;
-            this.tab_colors.Text = "Colors";
-            // 
-            // tab_configs
-            // 
-            this.tab_configs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.tab_configs.Controls.Add(this.configs_btn_exit);
-            this.tab_configs.Controls.Add(this.configs_btn_saveSkin);
-            this.tab_configs.Controls.Add(this.configs_txt_saveSkin);
-            this.tab_configs.Controls.Add(this.configs_btn_loadSkin);
-            this.tab_configs.Controls.Add(this.configs_btn_saveCheat);
-            this.tab_configs.Controls.Add(this.configs_txt_saveCheat);
-            this.tab_configs.Controls.Add(this.configs_btn_loadCheat);
-            this.tab_configs.Controls.Add(this.label24);
-            this.tab_configs.Controls.Add(this.label22);
-            this.tab_configs.Controls.Add(this.config_list_skinCfg);
-            this.tab_configs.Controls.Add(this.configs_list_cheatCfg);
-            this.tab_configs.Location = new System.Drawing.Point(4, 26);
-            this.tab_configs.Name = "tab_configs";
-            this.tab_configs.Size = new System.Drawing.Size(570, 351);
-            this.tab_configs.TabIndex = 6;
-            this.tab_configs.Text = "Configs";
-            // 
-            // configs_btn_exit
-            // 
-            this.configs_btn_exit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.configs_btn_exit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.configs_btn_exit.FlatAppearance.BorderSize = 0;
-            this.configs_btn_exit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(0)))), ((int)(((byte)(200)))));
-            this.configs_btn_exit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.configs_btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.configs_btn_exit.ForeColor = System.Drawing.Color.White;
-            this.configs_btn_exit.Location = new System.Drawing.Point(246, 158);
-            this.configs_btn_exit.Name = "configs_btn_exit";
-            this.configs_btn_exit.Size = new System.Drawing.Size(75, 30);
-            this.configs_btn_exit.TabIndex = 52;
-            this.configs_btn_exit.Text = "Exit";
-            this.configs_btn_exit.UseVisualStyleBackColor = false;
-            this.configs_btn_exit.Click += new System.EventHandler(this.configs_btn_exit_Click);
-            // 
-            // configs_btn_saveSkin
-            // 
-            this.configs_btn_saveSkin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.configs_btn_saveSkin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.configs_btn_saveSkin.FlatAppearance.BorderSize = 0;
-            this.configs_btn_saveSkin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(0)))), ((int)(((byte)(200)))));
-            this.configs_btn_saveSkin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.configs_btn_saveSkin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.configs_btn_saveSkin.ForeColor = System.Drawing.Color.White;
-            this.configs_btn_saveSkin.Location = new System.Drawing.Point(486, 316);
-            this.configs_btn_saveSkin.Name = "configs_btn_saveSkin";
-            this.configs_btn_saveSkin.Size = new System.Drawing.Size(75, 30);
-            this.configs_btn_saveSkin.TabIndex = 51;
-            this.configs_btn_saveSkin.Text = "Save";
-            this.configs_btn_saveSkin.UseVisualStyleBackColor = false;
-            this.configs_btn_saveSkin.Click += new System.EventHandler(this.configs_btn_saveSkin_Click);
-            // 
-            // configs_txt_saveSkin
-            // 
-            this.configs_txt_saveSkin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.configs_txt_saveSkin.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.configs_txt_saveSkin.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.configs_txt_saveSkin.ForeColor = System.Drawing.Color.White;
-            this.configs_txt_saveSkin.Location = new System.Drawing.Point(400, 290);
-            this.configs_txt_saveSkin.Margin = new System.Windows.Forms.Padding(5);
-            this.configs_txt_saveSkin.MaxLength = 15;
-            this.configs_txt_saveSkin.Name = "configs_txt_saveSkin";
-            this.configs_txt_saveSkin.Size = new System.Drawing.Size(161, 20);
-            this.configs_txt_saveSkin.TabIndex = 49;
-            // 
-            // configs_btn_loadSkin
-            // 
-            this.configs_btn_loadSkin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.configs_btn_loadSkin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.configs_btn_loadSkin.FlatAppearance.BorderSize = 0;
-            this.configs_btn_loadSkin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(0)))), ((int)(((byte)(200)))));
-            this.configs_btn_loadSkin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.configs_btn_loadSkin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.configs_btn_loadSkin.ForeColor = System.Drawing.Color.White;
-            this.configs_btn_loadSkin.Location = new System.Drawing.Point(401, 316);
-            this.configs_btn_loadSkin.Name = "configs_btn_loadSkin";
-            this.configs_btn_loadSkin.Size = new System.Drawing.Size(75, 30);
-            this.configs_btn_loadSkin.TabIndex = 50;
-            this.configs_btn_loadSkin.Text = "Load";
-            this.configs_btn_loadSkin.UseVisualStyleBackColor = false;
-            this.configs_btn_loadSkin.Click += new System.EventHandler(this.configs_btn_loadSkin_Click);
-            // 
-            // configs_btn_saveCheat
-            // 
-            this.configs_btn_saveCheat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.configs_btn_saveCheat.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.configs_btn_saveCheat.FlatAppearance.BorderSize = 0;
-            this.configs_btn_saveCheat.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(0)))), ((int)(((byte)(200)))));
-            this.configs_btn_saveCheat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.configs_btn_saveCheat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.configs_btn_saveCheat.ForeColor = System.Drawing.Color.White;
-            this.configs_btn_saveCheat.Location = new System.Drawing.Point(94, 316);
-            this.configs_btn_saveCheat.Name = "configs_btn_saveCheat";
-            this.configs_btn_saveCheat.Size = new System.Drawing.Size(75, 30);
-            this.configs_btn_saveCheat.TabIndex = 48;
-            this.configs_btn_saveCheat.Text = "Save";
-            this.configs_btn_saveCheat.UseVisualStyleBackColor = false;
-            this.configs_btn_saveCheat.Click += new System.EventHandler(this.configs_btn_saveCheat_Click);
-            // 
-            // configs_txt_saveCheat
-            // 
-            this.configs_txt_saveCheat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.configs_txt_saveCheat.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.configs_txt_saveCheat.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.configs_txt_saveCheat.ForeColor = System.Drawing.Color.White;
-            this.configs_txt_saveCheat.Location = new System.Drawing.Point(8, 290);
-            this.configs_txt_saveCheat.Margin = new System.Windows.Forms.Padding(5);
-            this.configs_txt_saveCheat.MaxLength = 15;
-            this.configs_txt_saveCheat.Name = "configs_txt_saveCheat";
-            this.configs_txt_saveCheat.Size = new System.Drawing.Size(161, 20);
-            this.configs_txt_saveCheat.TabIndex = 46;
-            // 
-            // configs_btn_loadCheat
-            // 
-            this.configs_btn_loadCheat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.configs_btn_loadCheat.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.configs_btn_loadCheat.FlatAppearance.BorderSize = 0;
-            this.configs_btn_loadCheat.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(0)))), ((int)(((byte)(200)))));
-            this.configs_btn_loadCheat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.configs_btn_loadCheat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.configs_btn_loadCheat.ForeColor = System.Drawing.Color.White;
-            this.configs_btn_loadCheat.Location = new System.Drawing.Point(9, 316);
-            this.configs_btn_loadCheat.Name = "configs_btn_loadCheat";
-            this.configs_btn_loadCheat.Size = new System.Drawing.Size(75, 30);
-            this.configs_btn_loadCheat.TabIndex = 47;
-            this.configs_btn_loadCheat.Text = "Load";
-            this.configs_btn_loadCheat.UseVisualStyleBackColor = false;
-            this.configs_btn_loadCheat.Click += new System.EventHandler(this.configs_btn_loadCheat_Click);
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(397, 3);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(74, 17);
-            this.label24.TabIndex = 7;
-            this.label24.Text = "Skin Config";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(6, 3);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(83, 17);
-            this.label22.TabIndex = 6;
-            this.label22.Text = "Cheat Config";
-            // 
-            // config_list_skinCfg
-            // 
-            this.config_list_skinCfg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.config_list_skinCfg.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.config_list_skinCfg.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.config_list_skinCfg.Font = new System.Drawing.Font("Calibri", 10.86792F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.config_list_skinCfg.ForeColor = System.Drawing.Color.White;
-            this.config_list_skinCfg.FormattingEnabled = true;
-            this.config_list_skinCfg.ItemHeight = 20;
-            this.config_list_skinCfg.Location = new System.Drawing.Point(400, 25);
-            this.config_list_skinCfg.Margin = new System.Windows.Forms.Padding(5);
-            this.config_list_skinCfg.Name = "config_list_skinCfg";
-            this.config_list_skinCfg.Size = new System.Drawing.Size(161, 260);
-            this.config_list_skinCfg.TabIndex = 5;
-            // 
-            // configs_list_cheatCfg
-            // 
-            this.configs_list_cheatCfg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.configs_list_cheatCfg.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.configs_list_cheatCfg.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.configs_list_cheatCfg.Font = new System.Drawing.Font("Calibri", 10.86792F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.configs_list_cheatCfg.ForeColor = System.Drawing.Color.White;
-            this.configs_list_cheatCfg.FormattingEnabled = true;
-            this.configs_list_cheatCfg.ItemHeight = 20;
-            this.configs_list_cheatCfg.Location = new System.Drawing.Point(8, 25);
-            this.configs_list_cheatCfg.Margin = new System.Windows.Forms.Padding(5);
-            this.configs_list_cheatCfg.Name = "configs_list_cheatCfg";
-            this.configs_list_cheatCfg.Size = new System.Drawing.Size(161, 260);
-            this.configs_list_cheatCfg.TabIndex = 4;
-            // 
-            // label10
-            // 
-            this.label10.Font = new System.Drawing.Font("Calibri", 10.18868F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(628, 0);
-            this.label10.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
-            this.label10.Name = "label10";
-            this.label10.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.label10.Size = new System.Drawing.Size(72, 40);
-            this.label10.TabIndex = 5;
-            this.label10.Text = "v1";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label10.MouseDown += new System.Windows.Forms.MouseEventHandler(this.wnd_MouseDown);
-            // 
-            // menu_Thread
-            // 
-            this.menu_Thread.DoWork += new System.ComponentModel.DoWorkEventHandler(this.menu_Thread_DoWork);
-            // 
-            // EuphoricToolTip
-            // 
-            this.EuphoricToolTip.AutomaticDelay = 0;
-            this.EuphoricToolTip.AutoPopDelay = 2000;
-            this.EuphoricToolTip.InitialDelay = 100;
-            this.EuphoricToolTip.ReshowDelay = 500;
-            this.EuphoricToolTip.UseAnimation = false;
-            this.EuphoricToolTip.UseFading = false;
             // 
             // euphoricPanel6
             // 
@@ -1177,6 +921,17 @@
             this.aimbot_chk_enable.Text = "Enable";
             this.aimbot_chk_enable.UseVisualStyleBackColor = false;
             // 
+            // tab_triggerbot
+            // 
+            this.tab_triggerbot.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.tab_triggerbot.Controls.Add(this.euphoricPanel5);
+            this.tab_triggerbot.Location = new System.Drawing.Point(4, 26);
+            this.tab_triggerbot.Name = "tab_triggerbot";
+            this.tab_triggerbot.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_triggerbot.Size = new System.Drawing.Size(570, 351);
+            this.tab_triggerbot.TabIndex = 1;
+            this.tab_triggerbot.Text = "Triggerbot";
+            // 
             // euphoricPanel5
             // 
             this.euphoricPanel5.Controls.Add(this.triggerbot_chk_knifeBot);
@@ -1343,6 +1098,16 @@
             this.triggerbot_chk_enabled.Text = "Enable";
             this.triggerbot_chk_enabled.UseVisualStyleBackColor = false;
             this.triggerbot_chk_enabled.MouseEnter += new System.EventHandler(this.triggerbot_chk_enabled_MouseEnter);
+            // 
+            // tab_visuals
+            // 
+            this.tab_visuals.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.tab_visuals.Controls.Add(this.euphoricPanel4);
+            this.tab_visuals.Location = new System.Drawing.Point(4, 26);
+            this.tab_visuals.Name = "tab_visuals";
+            this.tab_visuals.Size = new System.Drawing.Size(570, 351);
+            this.tab_visuals.TabIndex = 2;
+            this.tab_visuals.Text = "Visuals";
             // 
             // euphoricPanel4
             // 
@@ -1813,6 +1578,17 @@
             this.visuals_chk_boxOutline.Text = "Box Outline";
             this.visuals_chk_boxOutline.UseVisualStyleBackColor = false;
             // 
+            // tab_skins
+            // 
+            this.tab_skins.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.tab_skins.Controls.Add(this.euphoricPanel3);
+            this.tab_skins.Font = new System.Drawing.Font("Calibri", 10.18868F, System.Drawing.FontStyle.Bold);
+            this.tab_skins.Location = new System.Drawing.Point(4, 26);
+            this.tab_skins.Name = "tab_skins";
+            this.tab_skins.Size = new System.Drawing.Size(570, 351);
+            this.tab_skins.TabIndex = 3;
+            this.tab_skins.Text = "Skins";
+            // 
             // euphoricPanel3
             // 
             this.euphoricPanel3.Controls.Add(this.skins_btn_updateKey);
@@ -2146,8 +1922,19 @@
             this.label13.Size = new System.Drawing.Size(161, 35);
             this.label13.TabIndex = 17;
             // 
+            // tab_misc
+            // 
+            this.tab_misc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.tab_misc.Controls.Add(this.euphoricPanel2);
+            this.tab_misc.Location = new System.Drawing.Point(4, 26);
+            this.tab_misc.Name = "tab_misc";
+            this.tab_misc.Size = new System.Drawing.Size(570, 351);
+            this.tab_misc.TabIndex = 4;
+            this.tab_misc.Text = "Misc";
+            // 
             // euphoricPanel2
             // 
+            this.euphoricPanel2.Controls.Add(this.misc_chk_radar);
             this.euphoricPanel2.Controls.Add(this.misc_chk_chatspam);
             this.euphoricPanel2.Controls.Add(this.misc_btn_3rdpersonkey);
             this.euphoricPanel2.Controls.Add(this.misc_chk_rankRevealer);
@@ -2168,6 +1955,22 @@
             this.euphoricPanel2.Name = "euphoricPanel2";
             this.euphoricPanel2.Size = new System.Drawing.Size(570, 350);
             this.euphoricPanel2.TabIndex = 47;
+            // 
+            // misc_chk_radar
+            // 
+            this.misc_chk_radar.Appearance = System.Windows.Forms.Appearance.Button;
+            this.misc_chk_radar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.misc_chk_radar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.misc_chk_radar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.misc_chk_radar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.misc_chk_radar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.misc_chk_radar.Location = new System.Drawing.Point(164, 62);
+            this.misc_chk_radar.Name = "misc_chk_radar";
+            this.misc_chk_radar.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.misc_chk_radar.Size = new System.Drawing.Size(142, 30);
+            this.misc_chk_radar.TabIndex = 64;
+            this.misc_chk_radar.Text = "In Game Radar";
+            this.misc_chk_radar.UseVisualStyleBackColor = false;
             // 
             // misc_chk_chatspam
             // 
@@ -2492,7 +2295,7 @@
             this.misc_combox_clanChangerTheme.FormattingEnabled = true;
             this.misc_combox_clanChangerTheme.Items.AddRange(new object[] {
             "Off",
-            "static ",
+            "Static ",
             "Skeet Theme",
             "Signature Theme",
             "Hidden",
@@ -2538,6 +2341,16 @@
             this.misc_txt_nameChanger.Name = "misc_txt_nameChanger";
             this.misc_txt_nameChanger.Size = new System.Drawing.Size(138, 17);
             this.misc_txt_nameChanger.TabIndex = 42;
+            // 
+            // tab_colors
+            // 
+            this.tab_colors.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.tab_colors.Controls.Add(this.euphoricPanel1);
+            this.tab_colors.Location = new System.Drawing.Point(4, 26);
+            this.tab_colors.Name = "tab_colors";
+            this.tab_colors.Size = new System.Drawing.Size(570, 351);
+            this.tab_colors.TabIndex = 5;
+            this.tab_colors.Text = "Colors";
             // 
             // euphoricPanel1
             // 
@@ -2627,6 +2440,211 @@
             this.colors_list_colorList.TabIndex = 13;
             this.colors_list_colorList.SelectedIndexChanged += new System.EventHandler(this.colors_list_colorList_SelectedIndexChanged);
             // 
+            // tab_configs
+            // 
+            this.tab_configs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.tab_configs.Controls.Add(this.configs_btn_exit);
+            this.tab_configs.Controls.Add(this.configs_btn_saveSkin);
+            this.tab_configs.Controls.Add(this.configs_txt_saveSkin);
+            this.tab_configs.Controls.Add(this.configs_btn_loadSkin);
+            this.tab_configs.Controls.Add(this.configs_btn_saveCheat);
+            this.tab_configs.Controls.Add(this.configs_txt_saveCheat);
+            this.tab_configs.Controls.Add(this.configs_btn_loadCheat);
+            this.tab_configs.Controls.Add(this.label24);
+            this.tab_configs.Controls.Add(this.label22);
+            this.tab_configs.Controls.Add(this.config_list_skinCfg);
+            this.tab_configs.Controls.Add(this.configs_list_cheatCfg);
+            this.tab_configs.Location = new System.Drawing.Point(4, 26);
+            this.tab_configs.Name = "tab_configs";
+            this.tab_configs.Size = new System.Drawing.Size(570, 351);
+            this.tab_configs.TabIndex = 6;
+            this.tab_configs.Text = "Configs";
+            // 
+            // configs_btn_exit
+            // 
+            this.configs_btn_exit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.configs_btn_exit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.configs_btn_exit.FlatAppearance.BorderSize = 0;
+            this.configs_btn_exit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(0)))), ((int)(((byte)(200)))));
+            this.configs_btn_exit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.configs_btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.configs_btn_exit.ForeColor = System.Drawing.Color.White;
+            this.configs_btn_exit.Location = new System.Drawing.Point(246, 158);
+            this.configs_btn_exit.Name = "configs_btn_exit";
+            this.configs_btn_exit.Size = new System.Drawing.Size(75, 30);
+            this.configs_btn_exit.TabIndex = 52;
+            this.configs_btn_exit.Text = "Exit";
+            this.configs_btn_exit.UseVisualStyleBackColor = false;
+            this.configs_btn_exit.Click += new System.EventHandler(this.configs_btn_exit_Click);
+            // 
+            // configs_btn_saveSkin
+            // 
+            this.configs_btn_saveSkin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.configs_btn_saveSkin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.configs_btn_saveSkin.FlatAppearance.BorderSize = 0;
+            this.configs_btn_saveSkin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(0)))), ((int)(((byte)(200)))));
+            this.configs_btn_saveSkin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.configs_btn_saveSkin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.configs_btn_saveSkin.ForeColor = System.Drawing.Color.White;
+            this.configs_btn_saveSkin.Location = new System.Drawing.Point(486, 316);
+            this.configs_btn_saveSkin.Name = "configs_btn_saveSkin";
+            this.configs_btn_saveSkin.Size = new System.Drawing.Size(75, 30);
+            this.configs_btn_saveSkin.TabIndex = 51;
+            this.configs_btn_saveSkin.Text = "Save";
+            this.configs_btn_saveSkin.UseVisualStyleBackColor = false;
+            this.configs_btn_saveSkin.Click += new System.EventHandler(this.configs_btn_saveSkin_Click);
+            // 
+            // configs_txt_saveSkin
+            // 
+            this.configs_txt_saveSkin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.configs_txt_saveSkin.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.configs_txt_saveSkin.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.configs_txt_saveSkin.ForeColor = System.Drawing.Color.White;
+            this.configs_txt_saveSkin.Location = new System.Drawing.Point(400, 290);
+            this.configs_txt_saveSkin.Margin = new System.Windows.Forms.Padding(5);
+            this.configs_txt_saveSkin.MaxLength = 15;
+            this.configs_txt_saveSkin.Name = "configs_txt_saveSkin";
+            this.configs_txt_saveSkin.Size = new System.Drawing.Size(161, 20);
+            this.configs_txt_saveSkin.TabIndex = 49;
+            // 
+            // configs_btn_loadSkin
+            // 
+            this.configs_btn_loadSkin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.configs_btn_loadSkin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.configs_btn_loadSkin.FlatAppearance.BorderSize = 0;
+            this.configs_btn_loadSkin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(0)))), ((int)(((byte)(200)))));
+            this.configs_btn_loadSkin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.configs_btn_loadSkin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.configs_btn_loadSkin.ForeColor = System.Drawing.Color.White;
+            this.configs_btn_loadSkin.Location = new System.Drawing.Point(401, 316);
+            this.configs_btn_loadSkin.Name = "configs_btn_loadSkin";
+            this.configs_btn_loadSkin.Size = new System.Drawing.Size(75, 30);
+            this.configs_btn_loadSkin.TabIndex = 50;
+            this.configs_btn_loadSkin.Text = "Load";
+            this.configs_btn_loadSkin.UseVisualStyleBackColor = false;
+            this.configs_btn_loadSkin.Click += new System.EventHandler(this.configs_btn_loadSkin_Click);
+            // 
+            // configs_btn_saveCheat
+            // 
+            this.configs_btn_saveCheat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.configs_btn_saveCheat.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.configs_btn_saveCheat.FlatAppearance.BorderSize = 0;
+            this.configs_btn_saveCheat.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(0)))), ((int)(((byte)(200)))));
+            this.configs_btn_saveCheat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.configs_btn_saveCheat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.configs_btn_saveCheat.ForeColor = System.Drawing.Color.White;
+            this.configs_btn_saveCheat.Location = new System.Drawing.Point(94, 316);
+            this.configs_btn_saveCheat.Name = "configs_btn_saveCheat";
+            this.configs_btn_saveCheat.Size = new System.Drawing.Size(75, 30);
+            this.configs_btn_saveCheat.TabIndex = 48;
+            this.configs_btn_saveCheat.Text = "Save";
+            this.configs_btn_saveCheat.UseVisualStyleBackColor = false;
+            this.configs_btn_saveCheat.Click += new System.EventHandler(this.configs_btn_saveCheat_Click);
+            // 
+            // configs_txt_saveCheat
+            // 
+            this.configs_txt_saveCheat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.configs_txt_saveCheat.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.configs_txt_saveCheat.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.configs_txt_saveCheat.ForeColor = System.Drawing.Color.White;
+            this.configs_txt_saveCheat.Location = new System.Drawing.Point(8, 290);
+            this.configs_txt_saveCheat.Margin = new System.Windows.Forms.Padding(5);
+            this.configs_txt_saveCheat.MaxLength = 15;
+            this.configs_txt_saveCheat.Name = "configs_txt_saveCheat";
+            this.configs_txt_saveCheat.Size = new System.Drawing.Size(161, 20);
+            this.configs_txt_saveCheat.TabIndex = 46;
+            // 
+            // configs_btn_loadCheat
+            // 
+            this.configs_btn_loadCheat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.configs_btn_loadCheat.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.configs_btn_loadCheat.FlatAppearance.BorderSize = 0;
+            this.configs_btn_loadCheat.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(0)))), ((int)(((byte)(200)))));
+            this.configs_btn_loadCheat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.configs_btn_loadCheat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.configs_btn_loadCheat.ForeColor = System.Drawing.Color.White;
+            this.configs_btn_loadCheat.Location = new System.Drawing.Point(9, 316);
+            this.configs_btn_loadCheat.Name = "configs_btn_loadCheat";
+            this.configs_btn_loadCheat.Size = new System.Drawing.Size(75, 30);
+            this.configs_btn_loadCheat.TabIndex = 47;
+            this.configs_btn_loadCheat.Text = "Load";
+            this.configs_btn_loadCheat.UseVisualStyleBackColor = false;
+            this.configs_btn_loadCheat.Click += new System.EventHandler(this.configs_btn_loadCheat_Click);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(397, 3);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(74, 17);
+            this.label24.TabIndex = 7;
+            this.label24.Text = "Skin Config";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(6, 3);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(83, 17);
+            this.label22.TabIndex = 6;
+            this.label22.Text = "Cheat Config";
+            // 
+            // config_list_skinCfg
+            // 
+            this.config_list_skinCfg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.config_list_skinCfg.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.config_list_skinCfg.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.config_list_skinCfg.Font = new System.Drawing.Font("Calibri", 10.86792F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.config_list_skinCfg.ForeColor = System.Drawing.Color.White;
+            this.config_list_skinCfg.FormattingEnabled = true;
+            this.config_list_skinCfg.ItemHeight = 20;
+            this.config_list_skinCfg.Location = new System.Drawing.Point(400, 25);
+            this.config_list_skinCfg.Margin = new System.Windows.Forms.Padding(5);
+            this.config_list_skinCfg.Name = "config_list_skinCfg";
+            this.config_list_skinCfg.Size = new System.Drawing.Size(161, 260);
+            this.config_list_skinCfg.TabIndex = 5;
+            // 
+            // configs_list_cheatCfg
+            // 
+            this.configs_list_cheatCfg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.configs_list_cheatCfg.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.configs_list_cheatCfg.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.configs_list_cheatCfg.Font = new System.Drawing.Font("Calibri", 10.86792F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.configs_list_cheatCfg.ForeColor = System.Drawing.Color.White;
+            this.configs_list_cheatCfg.FormattingEnabled = true;
+            this.configs_list_cheatCfg.ItemHeight = 20;
+            this.configs_list_cheatCfg.Location = new System.Drawing.Point(8, 25);
+            this.configs_list_cheatCfg.Margin = new System.Windows.Forms.Padding(5);
+            this.configs_list_cheatCfg.Name = "configs_list_cheatCfg";
+            this.configs_list_cheatCfg.Size = new System.Drawing.Size(161, 260);
+            this.configs_list_cheatCfg.TabIndex = 4;
+            // 
+            // label10
+            // 
+            this.label10.Font = new System.Drawing.Font("Calibri", 10.18868F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(628, 0);
+            this.label10.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.label10.Name = "label10";
+            this.label10.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.label10.Size = new System.Drawing.Size(72, 40);
+            this.label10.TabIndex = 5;
+            this.label10.Text = "v1";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label10.MouseDown += new System.Windows.Forms.MouseEventHandler(this.wnd_MouseDown);
+            // 
+            // menu_Thread
+            // 
+            this.menu_Thread.DoWork += new System.ComponentModel.DoWorkEventHandler(this.menu_Thread_DoWork);
+            // 
+            // EuphoricToolTip
+            // 
+            this.EuphoricToolTip.AutomaticDelay = 0;
+            this.EuphoricToolTip.AutoPopDelay = 2000;
+            this.EuphoricToolTip.InitialDelay = 100;
+            this.EuphoricToolTip.ReshowDelay = 500;
+            this.EuphoricToolTip.UseAnimation = false;
+            this.EuphoricToolTip.UseFading = false;
+            // 
             // wnd_menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
@@ -2654,19 +2672,14 @@
             this.panel1.ResumeLayout(false);
             this.menu_cheats.ResumeLayout(false);
             this.tab_aimbot.ResumeLayout(false);
-            this.tab_triggerbot.ResumeLayout(false);
-            this.tab_visuals.ResumeLayout(false);
-            this.tab_skins.ResumeLayout(false);
-            this.tab_misc.ResumeLayout(false);
-            this.tab_colors.ResumeLayout(false);
-            this.tab_configs.ResumeLayout(false);
-            this.tab_configs.PerformLayout();
             this.euphoricPanel6.ResumeLayout(false);
             this.euphoricPanel6.PerformLayout();
             this.aimbot_grp_aim.ResumeLayout(false);
             this.aimbot_grp_aim.PerformLayout();
+            this.tab_triggerbot.ResumeLayout(false);
             this.euphoricPanel5.ResumeLayout(false);
             this.euphoricPanel5.PerformLayout();
+            this.tab_visuals.ResumeLayout(false);
             this.euphoricPanel4.ResumeLayout(false);
             this.euphoricGroupBox6.ResumeLayout(false);
             this.euphoricGroupBox5.ResumeLayout(false);
@@ -2674,10 +2687,12 @@
             this.euphoricGroupBox3.ResumeLayout(false);
             this.euphoricGroupBox2.ResumeLayout(false);
             this.euphoricGroupBox1.ResumeLayout(false);
+            this.tab_skins.ResumeLayout(false);
             this.euphoricPanel3.ResumeLayout(false);
             this.euphoricPanel3.PerformLayout();
             this.euphoricGroupBox7.ResumeLayout(false);
             this.euphoricGroupBox7.PerformLayout();
+            this.tab_misc.ResumeLayout(false);
             this.euphoricPanel2.ResumeLayout(false);
             this.euphoricPanel2.PerformLayout();
             this.euphoricGroupBox8.ResumeLayout(false);
@@ -2687,7 +2702,10 @@
             this.euphoricGroupBox10.PerformLayout();
             this.euphoricGroupBox9.ResumeLayout(false);
             this.euphoricGroupBox9.PerformLayout();
+            this.tab_colors.ResumeLayout(false);
             this.euphoricPanel1.ResumeLayout(false);
+            this.tab_configs.ResumeLayout(false);
+            this.tab_configs.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2852,6 +2870,7 @@
         private System.Windows.Forms.Button skins_btn_updateKey;
         private System.Windows.Forms.CheckBox misc_chk_chatspam;
         private System.Windows.Forms.ToolTip EuphoricToolTip;
+        private System.Windows.Forms.CheckBox misc_chk_radar;
     }
 }
 

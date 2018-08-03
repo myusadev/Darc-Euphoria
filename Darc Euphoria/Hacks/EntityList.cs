@@ -35,10 +35,18 @@ namespace Darc_Euphoria.Hacks
                 string MapPath = string.Format(@"{0}\csgo\maps\{1}.bsp", 
                     Memory.process.Modules[0].FileName.Substring(0, Memory.process.Modules[0].FileName.Length - 9), Local.MapName);
 
-                if (Local.InGame && Local._bsp.FileName != MapPath)
+                if (Local.InGame)
                 {
-                    LoadMap(MapPath);
+                    if (Local.bspMap == null)
+                    {
+                        LoadMap(MapPath);
+                    }
+                    else if (Local.bspMap.FileName != MapPath)
+                    {
+                        LoadMap(MapPath);
+                    }
                 }
+                
             }
         }
 
@@ -46,7 +54,7 @@ namespace Darc_Euphoria.Hacks
         {
             if (File.Exists(MapPath) && Local.ActiveWeapon.WeaponID != -1)
             {
-                Local._bsp = new Euphoric.BspParsing.BSP(MapPath);
+                Local.bspMap = new Euphoric.BspParsing.BSPFile(MapPath);
                 ClientCMD.Exec(String.Format("clear; echo Map File {0} Loaded!", Local.MapName));
             }
         }

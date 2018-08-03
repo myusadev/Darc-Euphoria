@@ -266,7 +266,7 @@ namespace Darc_Euphoria.Hacks
             srcEye += Local.VectorVelocity * gvar.GlobalVarsBase.interval_per_tick;
 
             Vector3 delta = (targetBone - srcEye);
-            float magn = delta.Length();
+            float magn = delta.Length;
 
             Vector2 newAimAngle = new Vector2()
             {

@@ -42,7 +42,6 @@ namespace Darc_Euphoria.Euphoric
 
         public static Int32 dw_clientCmd;
         public static Int32 s_bOverridePostProcessingDisable;
-        public static Int32 dw_LineThroughSmoke;
 
         public static Int32 noarms;
         public static Int32 dw_CLobbyScreen;

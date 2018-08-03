@@ -155,11 +155,11 @@ namespace Darc_Euphoria.Euphoric
             Offsets.dwViewMatrix = COffset("0F 10 05 ? ? ? ? 8D 85 ? ? ? ? B9", 0x3, 176);
             Offsets.dwWeaponTable = COffset("B9 ? ? ? ? 6A 00 FF 50 08 C3", 0x1);
             Offsets.dwWeaponTableIndex = COffset("39 86 ? ? ? ? 74 06 89 86 ? ? ? ? 8B 86", 0x2);
-            Offsets.dw_RevealRankFn = FindPattern(new byte[] { 0x55, 0x8B, 0xEC, 0x8B, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x68 }, "xxxxx????x", Memory.client, Memory.client_size);
-            Offsets.dw_LineThroughSmoke = FindPattern(new byte[] { 0x55, 0x8B, 0xEC, 0x08, 0x8B, 0x15, 0x00, 0x00, 0x00, 0x00, 0x0F, 0x57, 0xC0 }, "xxxxxxxx????xxx", Memory.client, Memory.client_size);
             Offsets.s_bOverridePostProcessingDisable = COffset("80 3D ? ? ? ? ? 53 56 57 0F 85", 0x2);
             Offsets.dwForceJump = COffset("8B 0D ? ? ? ? 8B D6 8B C1 83 CA 02", 0x2);
-
+            //Offsets.dw_RevealRankFn = FindPattern(new byte[] { 0x55, 0x8B, 0xEC, 0x8B, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x68 }, "xxxxx????x", Memory.client, Memory.client_size);
+            //Offsets.dw_RevealRankFn = COffset("55 8B EC 8B 0D ? ? ? ? 68");
+            Offsets.dw_RevealRankFn = COffset("8B EC 8B 0D ? ? ? ? 68");
             //Offsets.dw_CLobbyScreen = COffset("A1 ? ? ? ? 85 C0 74 0F 6A ?", 0x1);
             //Offsets.dw_AcceptMatch = COffset("55 8B EC 83 E4 F8 83 EC 08 56 8B 35 ? ? ? ? 57 83 BE");
             //Offsets.dw_MatchAccepted = COffset("89 B7 ? ? ? ? 8B 4F 04 85 C9", 0x2);
@@ -242,7 +242,7 @@ namespace Darc_Euphoria.Euphoric
             Netvars.m_vecVelocity =             _tables["DT_CSPlayer"]["m_vecVelocity[0]"];
             Netvars.m_vecViewOffset =           _tables["DT_CSPlayer"]["m_vecViewOffset[0]"];
             Netvars.m_viewPunchAngle =          _tables["DT_BasePlayer"]["m_viewPunchAngle"];
-            Netvars.m_thirdPersonViewAngles =   _tables["DT_CSPlayer"]["deadflag"] + 4; //0x31C8; //offset4
+            Netvars.m_thirdPersonViewAngles =   _tables["DT_CSPlayer"]["deadflag"] + 4;
             Netvars.m_clrRender =               _tables["DT_BaseEntity"]["m_clrRender"];
             Netvars.m_zoomLevel =               _tables["DT_WeaponCSBaseGun"]["m_zoomLevel"];
             Netvars.m_bDrawViewmodel =          _tables["DT_BasePlayer"]["m_bDrawViewmodel"];

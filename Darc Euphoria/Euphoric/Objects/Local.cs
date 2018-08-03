@@ -35,10 +35,11 @@ namespace Darc_Euphoria.Euphoric.Objects
         private static List<BaseWeapon> _WeaponList;
         private static int _CrosshairID;
         private static int _Fov;
+        private static int _ViewmodelFov;
         private static float _Flash;
-        public static BspParsing.BSP _bsp = new BspParsing.BSP();
         private static bool _GotKill;
         private static int Kills;
+        public static BspParsing.BSPFile bspMap = null;
 
         public static int Index
         {
@@ -65,8 +66,6 @@ namespace Darc_Euphoria.Euphoric.Objects
                 return false;
             }
         }
-
-        private static int rFov = 0;
 
         public static string MapName
         {
@@ -132,12 +131,18 @@ namespace Darc_Euphoria.Euphoric.Objects
             }
         }
 
+        private static int rFov = 0;
         public static int Fov
         {
             get
             {
                 if (rFov.Upd())
-                    _Fov = Memory.Read<int>(Ptr + Netvars.m_iFOVStart - 4);
+                {
+                    if (Local.ActiveWeapon.WeaponID == 8 || Local.ActiveWeapon.WeaponID == 39)
+                        _Fov = Memory.Read<int>(Ptr + 0x330C);
+                    else
+                        _Fov = Memory.Read<int>(Ptr + Netvars.m_iFOVStart - 4);
+                }
 
                 return _Fov;
             }
@@ -145,8 +150,40 @@ namespace Darc_Euphoria.Euphoric.Objects
             {
                 if (value == _Fov) return;
 
+                if (Local.ActiveWeapon.WeaponID == 8|| Local.ActiveWeapon.WeaponID == 39)
+                {
+                    for (int i = 0; i < 1000; i++)
+                        Memory.Write<int>(Ptr + 0x330C, value);
+                }
+                else
+                {
+                    for (int i = 0; i < 1000; i++)
+                    {
+                        Memory.Write<int>(Ptr + Netvars.m_iFOVStart - 4, value);
+                        Memory.Write<int>(Ptr + 0x330C, 90);
+                    }
+                }
+                
+            }
+
+        }
+
+        private static int rViewmodelFov = 0;
+        public static int ViewmodelFov
+        {
+            get
+            {
+                if (rViewmodelFov.Upd())
+                    _ViewmodelFov = Memory.Read<int>(Ptr + 0x330C);
+
+                return _ViewmodelFov;
+            }
+            set
+            {
+                if (value == _ViewmodelFov) return;
+
                 for (int i = 0; i < 1000; i++)
-                    Memory.Write<int>(Ptr + Netvars.m_iFOVStart - 4, value);
+                    Memory.Write<int>(Ptr + 0x330C, value);
             }
 
         }

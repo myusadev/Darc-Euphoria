@@ -42,7 +42,6 @@ namespace Darc_Euphoria.Hacks
 
             Players(Device);
             Items(Device);
-            Glow.Start();
         }
 
         public static void Players(RenderTarget Device)
@@ -129,6 +128,10 @@ namespace Darc_Euphoria.Hacks
 
                 if (visuals.HealthPostion != Settings.HealthDisplay.Off)
                     HealthBar(Device, drawArea, player);
+
+                if (visuals.Glow || visuals.PseudoChams)
+                    Glow.Start(player, Settings.userSettings.VisualSettings, Settings.userSettings.VisualColors);
+                    
             }
         }
 
@@ -188,10 +191,6 @@ namespace Darc_Euphoria.Hacks
                             if (item.ClassName == "Grenade" && !visuals.GrenadesEsp) continue;
                             if (item.ClassName == "Flashbang" && !visuals.GrenadesEsp) continue;
                             if (item.ClassName == "HE Grenade" && !visuals.GrenadesEsp) continue;
-                            
-                            brush.Color = Color.FromArgb(1, 1, 1).toRawColor4();
-
-                            Device.DrawText(item.WeaponName, txtForm, rect, brush, DrawTextOptions.NoSnap);
 
                             brush.Color = visColors.World_Text.toRawColor4();
 
@@ -199,6 +198,7 @@ namespace Darc_Euphoria.Hacks
                             continue;
                         }
                     }
+
                     if (item.WeaponName != "-1") continue;
 
                     if (item.ClassName == "Chicken" && !visuals.ChickenEsp) continue;
@@ -566,10 +566,6 @@ namespace Darc_Euphoria.Hacks
                 if (visuals.HealthPostion == Settings.HealthDisplay.Bottom)
                     rect.Top += 5; rect.Bottom += 5;
                 
-                brush.Color = Color.FromArgb(1, 1, 1).toRawColor4();
-
-                Device.DrawText(player.ActiveWeapon.WeaponName, txtForm, rect, brush, DrawTextOptions.NoSnap);
-
                 if (player.isTeam) brush.Color = visColors.Team_Text.toRawColor4();
                 else brush.Color = visColors.Enemy_Text.toRawColor4();
 

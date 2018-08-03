@@ -58,8 +58,15 @@ namespace Darc_Euphoria.Hacks
                     else if (Local.ActiveWeapon.ScopeLevel == 1)
                     {
                         if (Local.ActiveWeapon.WeaponID != 8 && Local.ActiveWeapon.WeaponID != 39)
+                        {
                             Local.DrawViewModel = false;
-                        Local.Fov = 40;
+                            Local.Fov = 40;
+                        }
+                        else
+                        {
+                            Local.DrawViewModel = true;
+                            Local.Fov = 90;
+                        }
                     }
                     else if (Local.ActiveWeapon.ScopeLevel == 2)
                     {
@@ -82,8 +89,15 @@ namespace Darc_Euphoria.Hacks
                     else if (Local.ActiveWeapon.ScopeLevel == 1)
                     {
                         if (Local.ActiveWeapon.WeaponID != 8 && Local.ActiveWeapon.WeaponID != 39)
+                        {
                             Local.DrawViewModel = false;
-                        Local.Fov = 40;
+                            Local.Fov = 40;
+                        }
+                        else
+                        {
+                            Local.DrawViewModel = true;
+                            Local.Fov = 90;
+                        }
                     }
                     else if (Local.ActiveWeapon.ScopeLevel == 2)
                     {

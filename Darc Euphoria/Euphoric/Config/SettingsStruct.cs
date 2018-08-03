@@ -259,6 +259,7 @@ namespace Darc_Euphoria.Euphoric.Config
                 public bool RankRevealer;
                 public int _3rdPersonKey;
                 public bool ChatSpammer;
+                public bool inGameRadar;
             };
 
             [StructLayout(LayoutKind.Sequential)]

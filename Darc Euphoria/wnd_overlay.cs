@@ -15,7 +15,6 @@ using SharpDX.Mathematics.Interop;
 using AlphaMode = SharpDX.Direct2D1.AlphaMode;
 using Factory = SharpDX.Direct2D1.Factory;
 using TextAntialiasMode = SharpDX.Direct2D1.TextAntialiasMode;
-
 using Darc_Euphoria.Euphoric;
 using Darc_Euphoria.Hacks.Injection;
 using Darc_Euphoria.Euphoric.Config;
@@ -252,19 +251,18 @@ namespace Darc_Euphoria
                     {
                         using (SolidColorBrush brush = new SolidColorBrush(Device, Color.White.toRawColor4()))
                         {
-                            var radAngle = Settings.userSettings.MiscSettings.Fov * (3.14f / 180f);
+                            var radAngle = Local.Fov * (3.14f / 180f);
                             var radHFov = 2 * Math.Atan(Math.Tan(radAngle / 2f) * gvar.AspectRatio);
                             var hFov = radHFov * (180f / 3.14f);
-                            var perc = gvar.OverlaySize.Width / hFov;
 
-                            var rcsPunchVec = Local.PunchAngle * .59999f;
-                            rcsPunchVec *= -1;
-                            rcsPunchVec *= (float)perc;
-                            rcsPunchVec *= Local.ScopeScale;
-
-                            var point = new RawVector2(gvar.OverlaySize.Width / 2 + rcsPunchVec.x, gvar.OverlaySize.Height / 2 - rcsPunchVec.y);
-
-
+                            var rcsPunchVec = Local.PunchAngle;
+                            var x = gvar.OverlaySize.Width / 2;
+                            var y = gvar.OverlaySize.Height / 2;
+                            var dx = gvar.OverlaySize.Width / hFov;
+                            var dy = gvar.OverlaySize.Height / Local.Fov;
+                            x -= (int)(dx * rcsPunchVec.x);
+                            y += (int)(dy * rcsPunchVec.y);
+                            var point = new RawVector2(x, y);
                             var p1 = point;
                             var p2 = point;
                             var p3 = point;
@@ -293,12 +291,15 @@ namespace Darc_Euphoria
 
                         if (radius < math)
                         {
-                            var rcsPunchVec = Local.PunchAngle * .59999f;
-                            rcsPunchVec *= -1;
-                            rcsPunchVec *= (float)perc;
-                            rcsPunchVec *= Local.ScopeScale;
+                            var rcsPunchVec = Local.PunchAngle;
+                            var x = gvar.OverlaySize.Width / 2;
+                            var y = gvar.OverlaySize.Height / 2;
+                            var dx = gvar.OverlaySize.Width / hFov;
+                            var dy = gvar.OverlaySize.Height / Local.Fov;
+                            x -= (int)(dx * rcsPunchVec.x);
+                            y += (int)(dy * rcsPunchVec.y);
 
-                            RawVector2 center = new RawVector2(gvar.OverlaySize.Width / 2 + rcsPunchVec.x, gvar.OverlaySize.Height / 2 - rcsPunchVec.y);
+                            RawVector2 center = new RawVector2(x, y);
 
                             using (SolidColorBrush brush = new SolidColorBrush(Device, Color.White.toRawColor4()))
                                 Device.DrawEllipse(new Ellipse(center, radius, radius), brush);

@@ -51,7 +51,6 @@ namespace Darc_Euphoria.Euphoric.Objects
             }
         }
 
-        private byte[] ByteArray;
         public int Index;
         private static int _Ptr;
         private static int _Health;
@@ -210,6 +209,10 @@ namespace Darc_Euphoria.Euphoric.Objects
 
                 return _Spotted;
             }
+            set
+            {
+                Memory.Write<bool>(Ptr + Netvars.m_bSpotted, value);
+            }
         }
 
         private static int rVisible = 0;
@@ -222,11 +225,10 @@ namespace Darc_Euphoria.Euphoric.Objects
                     if (Dormant)
                         _Visible = false;
                     else
-                        _Visible = Local._bsp.IsVisible(Local.EyeLevel, BonePosition(6));
+                        _Visible = Local.bspMap.IsVisible(Local.EyeLevel, BonePosition(6));
                 }
 
                 return _Visible;
-                
             }
         }
 
@@ -296,7 +298,8 @@ namespace Darc_Euphoria.Euphoric.Objects
         public Entity(int index, bool Bsp = false)
         {
             Index = index;
-            //ByteArray = Memory.ReadBytes(Memory.client + Offsets.dwEntityList + (Index - 1) * 0x10, Memory.client_size);
+            if (Settings.userSettings.MiscSettings.inGameRadar)
+                Spotted = true;
         }
     }
 }

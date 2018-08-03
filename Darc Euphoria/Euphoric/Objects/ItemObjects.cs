@@ -198,6 +198,60 @@ namespace Darc_Euphoria.Euphoric.Objects
             }
         }
 
+        public string Icon
+        {
+            get
+            {
+                if (isKnife()) return "\uE02A";
+
+                switch (WeaponID)
+                {
+                    case 1: return "\uE001";
+                    case 2: return "\uE002";
+                    case 3: return "\uE003";
+                    case 4: return "\uE004";
+                    case 7: return "\uE007";
+                    case 8: return "\uE008";
+                    case 9: return "\uE009";
+                    case 10: return "\uE00A";
+                    case 11: return "\uE00B";
+                    case 13: return "\uE00D";
+                    case 14: return "\uE00E";
+                    case 16: return "\uE010";
+                    case 17: return "\uE011";
+                    case 19: return "\uE013";
+                    case 24: return "\uE018";
+                    case 25: return "\uE019";
+                    case 26: return "\uE01A";
+                    case 27: return "\uE01B";
+                    case 28: return "\uE01C";
+                    case 29: return "\uE01D";
+                    case 30: return "\uE01E";
+                    case 31: return "\uE01F";
+                    case 32: return "\uE020";
+                    case 33: return "\uE021";
+                    case 34: return "\uE022";
+                    case 35: return "\uE023";
+                    case 36: return "\uE024";
+                    case 38: return "\uE026";
+                    case 39: return "\uE027";
+                    case 40: return "\uE028";
+                    case 43: return "\uE02B";
+                    case 44: return "\uE02C";
+                    case 45: return "\uE02D";
+                    case 46: return "\uE02E";
+                    case 47: return "\uE02F";
+                    case 48: return "\uE030";
+                    case 49: return "\uE031";
+                    case 69: return "\uE045";
+                    case 61: return "\uE03D";
+                    case 63: return "\uE03F";
+                    case 64: return "\uE040";
+                    default: return WeaponID.ToString();
+                }
+
+            }
+        }
 
         public bool isWeapon
         {

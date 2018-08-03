@@ -25,9 +25,6 @@ namespace Darc_Euphoria.Hacks.Injection
 
         public static void Show()
         {
-            if (gvar.isPanorama) return;
-
-
             if (Address == IntPtr.Zero)
             {
                 Address = gvar.Alloc.Alloc(Size);

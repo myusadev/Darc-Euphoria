@@ -23,7 +23,7 @@ namespace Darc_Euphoria
     public partial class wnd_menu : Form
     {
         public string ConfigName = "Default";
-        public double ConfigVerson = 1;
+        public double ConfigVerson = 1.1;
 
         public void UpdateConfig(bool init)
         {
@@ -177,6 +177,7 @@ namespace Darc_Euphoria
             Settings.userSettings.MiscSettings._3rdPersonKey = 0xA4;
             Settings.userSettings.ForceUpdateKey = 0x70;
             Settings.userSettings.MiscSettings.ChatSpammer = misc_chk_chatspam.Checked;
+            Settings.userSettings.MiscSettings.inGameRadar = misc_chk_radar.Checked;
             #endregion
         }
 
@@ -548,8 +549,6 @@ namespace Darc_Euphoria
             }
         }
 
-        
-
         List<Control> controlList;
         private IEnumerable<Control> GetControlHierarchy(Control root)
         {
@@ -629,7 +628,7 @@ namespace Darc_Euphoria
         public wnd_menu()
         {
             InitializeComponent();
-
+            label10.Text = "v" + ConfigVerson;
             Thread.CurrentThread.Priority = ThreadPriority.Highest;
 
             if (!Sig.Init())
@@ -663,7 +662,6 @@ namespace Darc_Euphoria
             #endregion
 
 
-            Local._bsp.FileName = "null";
             Thread.Sleep(1);
             entityUpdate.Start();
             miscThread.Start();
@@ -1366,14 +1364,6 @@ namespace Darc_Euphoria
             }
             else
             {
-                while (gvar.SHUTDOWN != 0)
-                    Thread.Sleep(1);
-
-                try
-                {
-                    Local._bsp.Dispose();
-                }
-                catch { }
 
                 Local.ThirdPerson = false;
                 SetClanTag.Set("");
@@ -1388,15 +1378,6 @@ namespace Darc_Euphoria
             gvar.isShuttingDown = true;
 
             Thread.Sleep(100);
-
-            while (gvar.SHUTDOWN != 0)
-            {
-                this.Refresh();
-                Thread.Sleep(1);
-            }
-
-            Local._bsp.Dispose();
-
             Local.ThirdPerson = false;
             SetClanTag.Set("");
             Local.SendPackets = true;
