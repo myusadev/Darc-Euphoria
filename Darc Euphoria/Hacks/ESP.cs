@@ -131,7 +131,6 @@ namespace Darc_Euphoria.Hacks
 
                 if (visuals.Glow || visuals.PseudoChams)
                     Glow.Start(player, Settings.userSettings.VisualSettings, Settings.userSettings.VisualColors);
-                    
             }
         }
 
@@ -447,32 +446,16 @@ namespace Darc_Euphoria.Hacks
                     "Calibri", FontWeight.Bold, SharpDX.DirectWrite.FontStyle.Normal, 10);
 
                 
-                txtForm.SetWordWrapping(WordWrapping.NoWrap);
-
-                RawRectangleF rect = new RawRectangleF();
-
-                if (visuals.HealthPostion == Settings.HealthDisplay.Left)
-                    rect = new RawRectangleF(x - 25, y1, x, y1 + 10);
-                else if (visuals.HealthPostion == Settings.HealthDisplay.Right)
-                    rect = new RawRectangleF(x + 10, y1, x + 1, y1 + 10);
-                else if (visuals.HealthPostion == Settings.HealthDisplay.Top)
-                    rect = new RawRectangleF(y1, x - 15, y2, x);
-                else if (visuals.HealthPostion == Settings.HealthDisplay.Bottom)
-                    rect = new RawRectangleF(y1, x, y2, x);
-
                 if (visuals.HealthNumber)
                 {
-                    brush.Color = Color.FromArgb(1, 1, 1).toRawColor4();
-                    Device.DrawText(player.Health + "%", txtForm, rect, brush, DrawTextOptions.NoSnap);
+                    txtForm.SetWordWrapping(WordWrapping.NoWrap);
+                    RawRectangleF rect = new RawRectangleF(drawArea.x - 30, drawArea.y, drawArea.x, drawArea.y + 10);
 
                     if (player.isTeam) brush.Color = visColors.Team_Text.toRawColor4();
                     else brush.Color = visColors.Enemy_Text.toRawColor4();
 
                     Device.DrawText(player.Health + "%", txtForm, rect, brush, DrawTextOptions.EnableColorFont | DrawTextOptions.DisableColorBitmapSnapping | DrawTextOptions.NoSnap);
                 }
-                
-
-
             }
         }
 
