@@ -17,6 +17,7 @@ using Darc_Euphoria.Hacks;
 using Darc_Euphoria.Hacks.Injection;
 using static Darc_Euphoria.Euphoric.Structs;
 using Darc_Euphoria.Euphoric.Config;
+using MyusaVirtualMachine.CSGO;
 
 namespace Darc_Euphoria
 {
